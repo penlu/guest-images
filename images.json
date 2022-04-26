@@ -67,6 +67,28 @@
     },
 
 
+    "debian-9.2.1_5.4.0-x86_64": {
+      "name": "Debian x86_64 image",
+      "image_group": "linux",
+      "url": "https://drive.google.com/open?id=1fybAk4Qb-0Ig8W3immpwBLc-SZoN7UUh",
+      "iso": {
+        "url": "https://cdimage.debian.org/mirror/cdimage/archive/9.2.1/amd64/iso-cd/debian-9.2.1-amd64-netinst.iso"
+      },
+      "os": {
+        "name": "debian",
+        "version": "9.2.1",
+        "arch": "x86_64",
+        "build": "",
+        "binary_formats": ["elf"]
+      },
+      "hw": {
+        "default_disk_size": "4G",
+        "default_snapshot_size": "256M",
+        "nic": "e1000"
+      }
+    },
+
+
     "windows-xpsp3pro-i386": {
       "name": "Windows XP Professional SP3 i386",
       "image_group": "windows",

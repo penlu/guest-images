@@ -58,7 +58,7 @@ useradd -u $MUID -g s2e s2e
 exec sudo -u s2e /bin/bash - << EOF
 set -x
 
-export C_INCLUDE_PATH=${1}:${C_INCLUDE_PATH}
+export C_INCLUDE_PATH=${1}:/usr/include:${C_INCLUDE_PATH}
 
 if [ ! -e .config ]; then
     echo "No .config - generating the default config"
@@ -75,7 +75,7 @@ if ! echo $VERSION | grep -q 3.13.11; then
     TARGET=deb-pkg
 fi
 
-fakeroot make -j8 \$TARGET LOCALVERSION=-s2e || err "Build failed"
+make -j24 \$TARGET LOCALVERSION=-s2e || err "Build failed"
 
 # Restore access to files under version control
 chmod a+rw debian
